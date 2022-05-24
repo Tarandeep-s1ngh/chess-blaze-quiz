@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { chessHero, chessH1 } from "../assets/";
+import { chessHero, chessH1 } from "../assets";
 
 export const LandingPageMain = () => {
   return (

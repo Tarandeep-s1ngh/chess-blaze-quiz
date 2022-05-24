@@ -57,7 +57,6 @@ export const Results = () => {
       <button className="btn-primary next-quest btn-home">Share Quiz 📤</button>
       <br />
       <button
-        onclick="window.location.href='/index.html';"
         className="btn-primary next-quest btn-home"
       >
         Back to Home 🏠
