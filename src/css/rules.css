@@ -1,0 +1,52 @@
+
+.rules {
+    color: var(--white);
+    max-width: 90%;
+    margin: auto;
+    margin-top: 5rem;
+    padding: 1rem;
+    border: 2px solid var(--accent-color);
+    border-radius: 10px;
+}
+
+.rules > .btn-primary {
+    display: block;
+    margin: auto;
+    border: 1px solid var(--accent-color);
+    margin-top: 1rem;
+    background-color: var(--accent-color);
+}
+
+.rules > .btn-primary:hover {
+    border: 1px solid var(--accent-color);
+    background-color: var(--primary-color);
+}
+
+
+/*=============================================
+=            Media Queries            =
+=============================================*/
+
+/*=====  Tablets  ======*/
+
+@media screen and (min-width: 768px) {
+    .rules {
+        max-width: 70%;
+    }
+}
+
+/*=====  Laptops  ======*/
+
+@media screen and (min-width: 1024px) {
+    .rules {
+        max-width: 60%;
+    }
+}
+
+/*=====  Desktops  ======*/
+
+@media screen and (min-width: 1280px) {
+    .rules {
+        max-width: 40%;
+    }
+}
