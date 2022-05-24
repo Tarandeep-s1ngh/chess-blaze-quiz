@@ -1,0 +1,24 @@
+
+.quiz-content > button:hover {
+    background-color: var(--primary-color);
+    cursor: default;
+}
+.quiz-wrong {
+    background-color: var(--danger);
+}
+
+.quiz-content > .quiz-wrong:hover {
+    background-color: var(--danger);
+}
+
+.quiz-correct {
+    background-color: var(--success);
+}
+
+.quiz-content > .quiz-correct:hover {
+    background-color: var(--success);
+}
+
+.btn-home:hover {
+    background-color: var(--accent-color);
+}
