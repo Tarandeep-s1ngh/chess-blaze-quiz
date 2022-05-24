@@ -3,9 +3,9 @@
 <div align="center">Test your knowledge and learn some interesting facts around chess</div>
 <br />
 <div align="center">
-<img height="40" src="/assets/favicon.svg"/>
-<img height="160" src="/assets/chess-hero.png"/>
-<img height="40" src="/assets/favicon.svg"/>
+<img height="40" src="./src/assets/favicon.svg"/>
+<img height="160" src="./src/assets/chess-hero.png"/>
+<img height="40" src="./src/assets/favicon.svg"/>
 </div>
 
 ## **Table of contents**
