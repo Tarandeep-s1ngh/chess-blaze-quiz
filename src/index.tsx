@@ -1,19 +1,41 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+
+import App from "./App";
+
+import { initializeApp } from "firebase/app";
+
+import { getFirestore } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
+import { getStorage } from "firebase/storage";
+import { AuthProvider } from "./context/AuthContext";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDQlDUBNk8YVyTqel5jr-KDxHjO7t7kVKo",
+  authDomain: "chess-blaze.firebaseapp.com",
+  projectId: "chess-blaze",
+  storageBucket: "chess-blaze.appspot.com",
+  messagingSenderId: "727246632747",
+  appId: "1:727246632747:web:7d0ccc320cadbb42d0776e",
+};
+
+const app = initializeApp(firebaseConfig);
+
+export const db = getFirestore(app);
+export const auth = getAuth();
+
+export const storage = getStorage(app);
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+    <AuthProvider>
+      <App />
+    </AuthProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

@@ -1,24 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
+
+import { Footer, Navbar } from "./components";
+import {
+  Categories,
+  Forgot,
+  HistoryQuiz,
+  IndiaQuiz,
+  LandingPageMain,
+  Login,
+  Profile,
+  Results,
+  Rules,
+  Signup,
+} from "./pages";
+
+import "./App.css";
 
 function App() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<LandingPageMain />} />
+        <Route path="categories" element={<Categories />} />
+        <Route path="indiaquiz" element={<IndiaQuiz />} />
+        <Route path="historyquiz" element={<HistoryQuiz />} />
+        <Route path="rules" element={<Rules />} />
+        <Route path="results" element={<Results />} />
+        <Route path="login" element={<Login />} />
+        <Route path="profile" element={<Profile />} />
+        <Route path="signup" element={<Signup />} />
+        <Route path="forgot" element={<Forgot />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }

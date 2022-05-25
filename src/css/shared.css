@@ -1,0 +1,65 @@
+/*=============================================
+=            Global Chess Blaze            =
+=============================================*/
+
+:root {
+    --primary-color: #272727;
+    --secondary-color: #2F3763;
+    --accent-color: #fc7645ec;
+    --highlight-color: #67bfe7;
+    --white: #f7f7f7;
+    --black: #282828;
+    --dark-black: #1a1a1a;
+    --dark-gray: #424242;
+    --cursive-font: 'Caveat', cursive;
+    font-size: 100%;
+}
+
+.accent-color {
+    color: var(--accent-color);
+}
+
+.highlight-color {
+    color: var(--highlight-color);
+}
+
+.mt-0p5 {
+    margin-top: 0.5rem;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+body {
+    background-color: var(--primary-color);
+    padding: 0.5rem;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 97.5vh;
+}
+
+.main-wrapper {
+    flex-grow: 1;
+}
+
+.dis-inline-block {
+    display: inline-block;
+}
+
+a:hover {
+    transform: scale(1.01);
+}
+
+.span-hover:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+    color: var(--accent-color);
+}
+
+button:hover {
+    transform: scale(1.01);
+}
