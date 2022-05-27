@@ -16,9 +16,6 @@ export const QuestionCard = () => {
         <button className="btn-primary">India</button>
         <button className="btn-primary">China</button>
         <button className="btn-primary">Australia</button>
-
-        <button className="btn-primary next-quest">Next ▶</button>
-        <button className="btn-primary next-quest btn-home">Home 🏠</button>
       </section>
     </>
   );
