@@ -1,10 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-// import { useAuth } from "../../context";
+import { signup } from "../../utils";
+import { useAuth } from "../../context";
 
 export const Signup = () => {
-  const [userDetails, setUserDetails] = useState({ email: "", passowrd: "" });
-  // const { signup } = useAuth();
+  const navigate = useNavigate();
+  const [userDetails, setUserDetails] = useState<{
+    userName: string;
+    email: string;
+    password: string;
+  }>({ userName: "", email: "", password: "" });
+  const { setUser } = useAuth();
 
   return (
     <main className="main-wrapper">
@@ -16,13 +22,26 @@ export const Signup = () => {
         <section className="quiz-content">
           <form action="" className="input-validation">
             <label htmlFor="username"></label>
-            <input type="text" placeholder="Enter Your Name" required />
+            <input
+              onChange={(e) =>
+                setUserDetails((prev) => ({
+                  ...prev,
+                  userName: e.target.value,
+                }))
+              }
+              value={userDetails.userName}
+              id="username"
+              type="text"
+              placeholder="Enter Your Name"
+              required
+            />
 
             <label htmlFor="email-input"></label>
             <input
               onChange={(e) =>
                 setUserDetails((prev) => ({ ...prev, email: e.target.value }))
               }
+              id="email-input"
               value={userDetails.email}
               type="email"
               placeholder="Enter Email"
@@ -34,17 +53,18 @@ export const Signup = () => {
               onChange={(e) =>
                 setUserDetails((prev) => ({
                   ...prev,
-                  passowrd: e.target.value,
+                  password: e.target.value,
                 }))
               }
-              value={userDetails.passowrd}
+              id="password"
+              value={userDetails.password}
               type="password"
               placeholder="Enter Password"
               required
             />
 
-            <label htmlFor="confirm password"></label>
-            <input type="password" placeholder="Re-type Password" required />
+            {/* <label htmlFor="confirm password"></label>
+            <input id="confirm password" type="password" placeholder="Re-type Password" required /> */}
 
             <span>
               Already registered?{" "}
@@ -55,7 +75,9 @@ export const Signup = () => {
           </form>
 
           <button
-            // onClick={() => signup(userDetails.email, userDetails.passowrd)}
+            onClick={() =>
+              signup({ credentials: userDetails, setUser, navigate })
+            }
             className="btn-primary next-quest btn-login"
           >
             Sign Up ▶

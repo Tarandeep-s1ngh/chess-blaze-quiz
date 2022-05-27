@@ -1,0 +1,1 @@
+export type {authState, setUserFnType} from "./auth"

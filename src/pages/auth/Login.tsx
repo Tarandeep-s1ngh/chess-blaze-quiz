@@ -1,10 +1,28 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-// import { useAuth } from "../../context";
+import { useAuth } from "../../context";
+import { login } from "../../utils";
 
 export const Login = () => {
-  const [userDetails, setUserDetails] = useState({ email: "", passowrd: "" });
-  // const { login } = useAuth();
+  const navigate = useNavigate();
+  const [userDetails, setUserDetails] = useState<{
+    email: string;
+    password: string;
+  }>({ email: "", password: "" });
+  const { setUser } = useAuth();
+
+  const handleLogin = (isGuestLogin?: boolean) => {
+    isGuestLogin
+      ? login({
+          credentials: {
+            email: "test123@gmail.com",
+            password: "test123",
+          },
+          setUser,
+          navigate,
+        })
+      : login({ credentials: userDetails, setUser, navigate });
+  };
 
   return (
     <main className="main-wrapper">
@@ -20,6 +38,7 @@ export const Login = () => {
               onChange={(e) =>
                 setUserDetails((prev) => ({ ...prev, email: e.target.value }))
               }
+              id="email-input"
               value={userDetails.email}
               type="email"
               placeholder="Enter Email"
@@ -31,10 +50,11 @@ export const Login = () => {
               onChange={(e) =>
                 setUserDetails((prev) => ({
                   ...prev,
-                  passowrd: e.target.value,
+                  password: e.target.value,
                 }))
               }
-              value={userDetails.passowrd}
+              id="password"
+              value={userDetails.password}
               type="password"
               placeholder="Enter Password"
               required
@@ -54,13 +74,13 @@ export const Login = () => {
 
           <div>
             <button
-              // onClick={() => login(userDetails.email, userDetails.passowrd)}
+              onClick={() => handleLogin()}
               className="btn-primary next-quest btn-login guest-login"
             >
               Login ▶
             </button>
             <button
-              // onClick={() => login("test1608@gmail.com", "test@1608")}
+              onClick={() => handleLogin(true)}
               className="btn-primary next-quest btn-login guest-login"
             >
               Guest Login ▶

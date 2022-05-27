@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 
-import { Footer, Navbar } from "./components";
+import { Footer, Navbar, PrivateRoute } from "./components";
 import {
   Categories,
   Forgot,
@@ -15,6 +15,7 @@ import {
 } from "./pages";
 
 import "./App.css";
+import { LocalRoutes } from "./utils";
 
 function App() {
   const { pathname } = useLocation();
@@ -26,15 +27,23 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
-        <Route path="/" element={<LandingPageMain />} />
-        <Route path="categories" element={<Categories />} />
-        <Route path="questionspage" element={<QuestionsPage />} />
-        <Route path="rules" element={<Rules />} />
-        <Route path="results" element={<Results />} />
-        <Route path="login" element={<Login />} />
-        <Route path="profile" element={<Profile />} />
-        <Route path="signup" element={<Signup />} />
-        <Route path="forgot" element={<Forgot />} />
+        <Route path={LocalRoutes.HOME} element={<LandingPageMain />} />
+        <Route element={<PrivateRoute />}>
+          <Route path={LocalRoutes.CATEGORIES} element={<Categories />} />
+          <Route
+            path={LocalRoutes.QUESTIONS_PAGE}
+            element={<QuestionsPage />}
+          />
+          <Route path={LocalRoutes.RULES} element={<Rules />} />
+          <Route path={LocalRoutes.RESULTS} element={<Results />} />
+          <Route path={LocalRoutes.PROFILE} element={<Profile />} />
+        </Route>
+
+        <Route element={<PrivateRoute isAuthRoute={true} />}>
+          <Route path={LocalRoutes.LOGIN} element={<Login />} />
+          <Route path={LocalRoutes.SIGNUP} element={<Signup />} />
+          <Route path={LocalRoutes.FORGOT} element={<Forgot />} />
+        </Route>
       </Routes>
       <Footer />
     </div>

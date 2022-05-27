@@ -1,6 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../context";
+import { logout } from "../../utils";
 
 export const Profile = () => {
+  const navigate = useNavigate();
+  const { setUser } = useAuth();
   return (
     <main className="main-wrapper">
       <div className="auth-wrapper">
@@ -31,9 +35,12 @@ export const Profile = () => {
             </div>
           </div>
 
-          <Link to="/" className="btn-primary next-quest btn-login">
+          <button
+            onClick={() => logout({ setUser, navigate })}
+            className="btn-primary next-quest btn-login"
+          >
             Log Out ◀
-          </Link>
+          </button>
           <Link to="/" className="btn-primary next-quest btn-home">
             Deactivate My Account
           </Link>
