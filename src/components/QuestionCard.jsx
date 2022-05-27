@@ -1,6 +1,6 @@
-export const IndiaQuiz = () => {
+export const QuestionCard = () => {
   return (
-    <main className="quiz-wrapper">
+    <>
       <section className="quiz-header">
         <span>Question: 1/5</span>
         <span className="highlight-color lightbold">Timer: 30s</span>
@@ -20,6 +20,6 @@ export const IndiaQuiz = () => {
         <button className="btn-primary next-quest">Next ▶</button>
         <button className="btn-primary next-quest btn-home">Home 🏠</button>
       </section>
-    </main>
+    </>
   );
 };

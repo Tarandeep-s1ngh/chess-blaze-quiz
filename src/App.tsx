@@ -5,11 +5,10 @@ import { Footer, Navbar } from "./components";
 import {
   Categories,
   Forgot,
-  HistoryQuiz,
-  IndiaQuiz,
   LandingPageMain,
   Login,
   Profile,
+  QuestionsPage,
   Results,
   Rules,
   Signup,
@@ -29,8 +28,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPageMain />} />
         <Route path="categories" element={<Categories />} />
-        <Route path="indiaquiz" element={<IndiaQuiz />} />
-        <Route path="historyquiz" element={<HistoryQuiz />} />
+        <Route path="questionspage" element={<QuestionsPage />} />
         <Route path="rules" element={<Rules />} />
         <Route path="results" element={<Results />} />
         <Route path="login" element={<Login />} />

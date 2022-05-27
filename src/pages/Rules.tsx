@@ -17,7 +17,7 @@ export const Rules = () => {
         <p className="rule-item">
           ⭐ You have to answer the question in the given time frame
         </p>
-        <Link to="/historyquiz" className="btn-primary text-center">
+        <Link to="/questionspage" className="btn-primary text-center">
           Start Quiz
         </Link>
       </div>
