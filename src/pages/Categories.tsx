@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { chessH1 } from "../../assets";
+import { chessH1 } from "../assets";
 
 export const Categories = () => {
   return (

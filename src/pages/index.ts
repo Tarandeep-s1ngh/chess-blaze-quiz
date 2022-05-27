@@ -1,9 +1,8 @@
 export { LandingPageMain } from "./LandingPageMain";
 export { Rules } from "./Rules";
 export { Results } from "./Results";
-export { Categories } from "./categories/Categories";
-export { HistoryQuiz } from "./categories/HistoryQuiz/HistoryQuiz";
-export { IndiaQuiz } from "./categories/IndiaQuiz/IndiaQuiz";
+export { Categories } from "./Categories";
+export { QuestionsPage } from "./QuestionsPage";
 
 export { Login } from "./auth/Login";
 export { Profile } from "./auth/Profile";
