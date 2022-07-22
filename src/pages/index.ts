@@ -1,7 +1,7 @@
 export { LandingPageMain } from "./LandingPageMain";
 export { Rules } from "./Rules";
 export { Results } from "./Results";
-export { Categories } from "./Categories";
+export { CategoriesPage } from "./CategoriesPage";
 export { QuestionsPage } from "./QuestionsPage";
 
 export { Login } from "./auth/Login";

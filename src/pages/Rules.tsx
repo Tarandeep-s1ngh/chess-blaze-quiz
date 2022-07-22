@@ -1,6 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export const Rules = () => {
+  const params = useParams();
+
   return (
     <main className="main-wrapper">
       <div className="rules">
@@ -17,7 +19,10 @@ export const Rules = () => {
         <p className="rule-item">
           ⭐ You have to answer the question in the given time frame
         </p>
-        <Link to="/questionspage" className="btn-primary text-center">
+        <Link
+          to={`/questionspage/${params.quizId}`}
+          className="btn-primary text-center"
+        >
           Start Quiz
         </Link>
       </div>

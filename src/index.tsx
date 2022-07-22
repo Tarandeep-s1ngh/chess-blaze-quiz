@@ -10,6 +10,7 @@ import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
 import { AuthProvider } from "./context/AuthContext";
+import { QuizProvider } from "./context/QuizContext";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDQlDUBNk8YVyTqel5jr-KDxHjO7t7kVKo",
@@ -33,9 +34,11 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-    <AuthProvider>
-      <App />
-    </AuthProvider>
+      <AuthProvider>
+        <QuizProvider>
+          <App />
+        </QuizProvider>
+      </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
