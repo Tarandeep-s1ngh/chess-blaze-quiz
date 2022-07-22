@@ -3,7 +3,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 
 import { Footer, Navbar, PrivateRoute } from "./components";
 import {
-  Categories,
+  CategoriesPage,
   Forgot,
   LandingPageMain,
   Login,
@@ -29,13 +29,16 @@ function App() {
       <Routes>
         <Route path={LocalRoutes.HOME} element={<LandingPageMain />} />
         <Route element={<PrivateRoute />}>
-          <Route path={LocalRoutes.CATEGORIES} element={<Categories />} />
+          <Route path={LocalRoutes.CATEGORIES} element={<CategoriesPage />} />
           <Route
             path={LocalRoutes.QUESTIONS_PAGE}
             element={<QuestionsPage />}
           />
           <Route path={LocalRoutes.RULES} element={<Rules />} />
-          <Route path={LocalRoutes.RESULTS} element={<Results />} />
+          <Route
+            path={`${LocalRoutes.RESULTS}/:quizId`}
+            element={<Results />}
+          />
           <Route path={LocalRoutes.PROFILE} element={<Profile />} />
         </Route>
 
