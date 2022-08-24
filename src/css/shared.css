@@ -31,6 +31,10 @@
   margin-top: 1rem;
 }
 
+.mt-4 {
+  margin-top: 4rem;
+}
+
 body {
   background-color: var(--primary-color);
   padding: 0.5rem;
@@ -70,4 +74,8 @@ button:hover {
 
 .justify-center {
   justify-content: center;
+}
+
+button.pointer.next-quest:hover {
+  cursor: pointer;
 }

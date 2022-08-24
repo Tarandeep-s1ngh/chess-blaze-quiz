@@ -59,17 +59,6 @@ export const Login = () => {
               placeholder="Enter Password"
               required
             />
-
-            <span className="input-span">
-              <Link to="/forgot" className="input-validation-link">
-                Forgot password?
-              </Link>
-              <div>
-                <label>
-                  <input type="checkbox" /> Remember me
-                </label>
-              </div>
-            </span>
           </form>
 
           <div>
@@ -77,13 +66,13 @@ export const Login = () => {
               onClick={() => handleLogin()}
               className="btn-primary next-quest btn-login guest-login"
             >
-              Login ▶
+              Login <i className="fa-solid fa-circle-chevron-right"></i>
             </button>
             <button
               onClick={() => handleLogin(true)}
               className="btn-primary next-quest btn-login guest-login"
             >
-              Guest Login ▶
+              Guest Login <i className="fa-solid fa-circle-chevron-right"></i>
             </button>
           </div>
 

@@ -10,9 +10,6 @@ export const Navbar = () => {
           <i className="nav-logo fa-solid fa-chess"></i>Chess Blaze
         </Link>
       </div>
-      <Link to="/" className="icon-in-nav">
-        <i className="fas fa-search"></i>
-      </Link>
       <Link to="/categories" className="icon-in-nav">
         <i className="fas fa-clipboard-list"></i>
       </Link>

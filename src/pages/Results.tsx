@@ -95,7 +95,6 @@ export const Results = () => {
         );
       })}
 
-      {/* <button className="btn-primary next-quest btn-home">Share Quiz 📤</button> */}
       <br />
       <br />
       <Link
@@ -107,7 +106,7 @@ export const Results = () => {
           });
         }}
       >
-        Back to Home 🏠
+        Back to Home <i className="fa-solid fa-house"></i>
       </Link>
     </main>
   );

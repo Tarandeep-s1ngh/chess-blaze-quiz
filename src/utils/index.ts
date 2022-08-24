@@ -3,3 +3,5 @@ export { LocalRoutes, quizInitialState } from "./constants";
 
 export { getQuizCategories } from "./services/quizServices";
 export { getSingleQuizData } from "./services/quizServices";
+
+export { triggerToast } from "./toastTrigger";

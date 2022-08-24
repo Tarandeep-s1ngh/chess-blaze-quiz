@@ -1,6 +1,6 @@
 import { DocumentData } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { chessH1 } from "../assets";
 import { getQuizCategories } from "../utils";
 
@@ -8,6 +8,8 @@ export const Categories = () => {
   const [categState, setCategState] = useState<
     { categData: DocumentData; categId: string }[]
   >([]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     (async () => {
@@ -18,7 +20,7 @@ export const Categories = () => {
 
   return (
     <section className="categories">
-      <h3 className="h3 text-center">
+      <h3 className="h3 text-center bold">
         <Link to="/categories">Categories</Link>
       </h3>
 
@@ -27,11 +29,16 @@ export const Categories = () => {
           return (
             categData.name !== "History Unfolds" && (
               <div className="card-badge" key={categId}>
-                <div className="card-header">
+                <div
+                  onClick={() => {
+                    navigate(`/rules/${categId}`);
+                  }}
+                  className="card-header"
+                >
                   <img
                     className="img-responsive"
                     src={chessH1}
-                    alt="naruto themed notebook"
+                    alt="quiz card"
                   />
                   <div className="card-header-txt">
                     <h3 className="semibold highlight-color mt-0p5">
