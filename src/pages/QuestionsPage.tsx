@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useQuiz } from "../context/QuizContext";
 import { getSingleQuizData, LocalRoutes } from "../utils";
 
@@ -52,7 +52,15 @@ export const QuestionsPage = () => {
         setTimer(30);
       }
     }
-  }, [timer]);
+  }, [
+    timer,
+    currQuestionNumber,
+    currQuiz.length,
+    navigate,
+    quizDispatch,
+    quizId,
+    selectedOption,
+  ]);
 
   const nextQuestionHandler = () => {
     quizDispatch({
