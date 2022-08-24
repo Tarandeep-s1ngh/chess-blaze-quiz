@@ -25,10 +25,10 @@ export const Forgot = () => {
           </form>
 
           <Link to="/" className="btn-primary next-quest btn-login">
-            Reset Password ▶
+            Reset Password <i className="fa-solid fa-circle-chevron-right"></i>
           </Link>
           <Link to="/" className="btn-primary next-quest btn-home">
-            Home 🏠
+            Home <i className="fa-solid fa-house"></i>
           </Link>
         </section>
       </div>

@@ -10,6 +10,7 @@ import { NavigateFunction } from "react-router-dom";
 import { auth, db } from "../..";
 import { setUserFnType } from "../../types";
 import { LocalRoutes } from "../constants";
+import { triggerToast } from "../toastTrigger";
 
 export const signup = async ({
   credentials,
@@ -48,7 +49,10 @@ export const signup = async ({
     localStorage.setItem("QUIZAUTH", JSON.stringify(userObj));
 
     navigate(LocalRoutes.HOME);
+
+    triggerToast("success", `Welcome Aboard ${credentials.userName}!`);
   } catch (error) {
+    triggerToast("error", "Please enter a valid email id!");
     console.error(error);
   }
 };
@@ -77,8 +81,10 @@ export const login = async ({
       setUser(userObj);
       localStorage.setItem("QUIZAUTH", JSON.stringify(userObj));
       navigate(LocalRoutes.HOME);
+      triggerToast("success", "Welcome Aboard!");
     } else throw new Error("User Data Not Found!");
   } catch (error) {
+    triggerToast("error", "Invalid credantials!");
     console.error(error);
   }
 };
@@ -99,6 +105,7 @@ export const logout = async ({
     localStorage.removeItem("QUIZAUTH");
 
     navigate(LocalRoutes.HOME);
+    triggerToast("warning", "Logged Out!");
   } catch (error) {}
 };
 
@@ -113,6 +120,5 @@ export const forgotPassword = async ({
     await sendPasswordResetEmail(auth, email);
     navigate(LocalRoutes.LOGIN);
     alert("Password Reset Link Has Been Sent To Your Email Address");
-    // MAKE DUMMY EMAIL FOR GUEST LOGIN
   } catch (error) {}
 };

@@ -63,9 +63,6 @@ export const Signup = () => {
               required
             />
 
-            {/* <label htmlFor="confirm password"></label>
-            <input id="confirm password" type="password" placeholder="Re-type Password" required /> */}
-
             <span>
               Already registered?{" "}
               <Link to="/login" className="input-validation-link">
@@ -80,14 +77,14 @@ export const Signup = () => {
             }
             className="btn-primary next-quest btn-login"
           >
-            Sign Up ▶
+            Sign Up <i className="fa-solid fa-circle-chevron-right"></i>
           </button>
 
           <Link
             to="/"
             className="btn-primary next-quest btn-home dis-inline-block"
           >
-            Home 🏠
+            Home <i className="fa-solid fa-house"></i>
           </Link>
         </section>
       </div>
